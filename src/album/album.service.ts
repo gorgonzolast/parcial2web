@@ -25,6 +25,13 @@ export class AlbumService {
    }
   
    async create(album: AlbumEntity): Promise<AlbumEntity> {
+        /*Decription and name should be empty*/
+        if (album.description.length== 0) {
+            throw new BusinessLogicException("The description cannot be empty", BusinessError.PRECONDITION_FAILED);
+        }
+        if (album.name.length== 0) {
+            throw new BusinessLogicException("The name cannot be empty", BusinessError.PRECONDITION_FAILED);
+        }
        return await this.albumRepository.save(album);
    }
 

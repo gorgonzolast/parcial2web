@@ -32,7 +32,8 @@ describe('AlbumService', () => {
         name: faker.lorem.sentence(), 
         cover: faker.image.url(), 
         releaseDate: faker.date.past(),
-        description: faker.lorem.paragraph(2)})
+        description: faker.lorem.paragraph(2),
+        tracks: [],})
         albumsList.push(album);
     }
   }
